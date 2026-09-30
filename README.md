@@ -140,7 +140,11 @@ Open the Dubly AI extension, enter your **Google Gemini API key**, and click:
 
 Dubly AI uses **Google Gemini** for AI-powered speech translation and dubbing.
 
-You can obtain a Gemini API key through **Google AI Studio**.
+You can create or obtain your Gemini API key through **Google AI Studio**:
+
+👉 **[🔑 Get Your Gemini API Key — Google AI Studio](https://aistudio.google.com/app/apikey)**
+
+After opening Google AI Studio, create your API key and enter it in the Dubly AI extension settings.
 
 > Your API key is stored locally in Chrome and is sent only to Google for Gemini API requests.
 
