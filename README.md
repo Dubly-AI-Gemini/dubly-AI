@@ -1,6 +1,6 @@
 # 🎙️ Dubly AI
 
-### Real-Time AI Dubbing & Live Translation for Videos, Live Streams & Games
+### Real-Time AI Dubbing & Youtube, Live Translation for Videos, Live Streams & Games
 
 **Dubly AI** is a Chrome extension for **real-time AI voice dubbing and live translation** of online videos, live streams, streaming content, and gameplay.
 
