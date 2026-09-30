@@ -1,10 +1,12 @@
 # 🎙️ Dubly AI
 
-### Real-Time AI Dubbing & Live Translation for YouTube
+### Real-Time AI Dubbing & Live Translation for Videos, Live Streams & Games
 
-**Dubly AI** is a Chrome extension that provides **real-time AI voice dubbing and live translated subtitles** for YouTube videos and live streams, powered by **Google Gemini**.
+**Dubly AI** is a Chrome extension for **real-time AI voice dubbing and live translation** of online videos, live streams, streaming content, and gameplay.
 
-Experience videos in your preferred language with live speech translation, AI-generated voices, and synchronized translated subtitles.
+Powered by **Google Gemini**, Dubly AI translates spoken content in real time and generates AI-dubbed audio in your preferred language.
+
+Whether you are watching a **YouTube video, live stream, online video, gaming stream, or gameplay**, Dubly AI helps you understand content in your own language.
 
 ---
 
@@ -22,12 +24,15 @@ Download the latest version of **Dubly AI** from the GitHub Releases page:
 
 ## ✨ Features
 
-* 🎙️ **Real-time AI dubbing**
+* 🎙️ **Real-time AI voice dubbing**
 * 🌍 **Live speech-to-speech translation**
 * 🤖 Powered by **Google Gemini**
-* 📺 Works with **YouTube videos and live streams**
-* 📝 Live translated subtitles displayed directly on the video
-* 💬 Translated subtitles also available inside the extension popup
+* 📺 Supports online videos and streaming content
+* 🔴 Supports **live streams and live broadcasts**
+* 🎮 Supports **games, gameplay and gaming streams**
+* 🌐 Designed for multilingual online video content
+* 📝 Live translated subtitles
+* 💬 Translated subtitles inside the extension popup
 * 🔄 Continuous live translation with **Gemini Live Translate**
 * 🔊 Segmented translation + voice engine as a fallback
 * 🎚️ Adjustable original and dubbed audio volume
@@ -67,7 +72,29 @@ Dubly AI supports **23 major world languages** for AI dubbing and translation.
 | 22 | Hebrew     | עברית            |
 | 23 | Romanian   | Română           |
 
-> 🌎 From **English, French, German and Spanish** to **Persian, Arabic, Chinese, Japanese, Turkish** and many other languages, Dubly AI makes multilingual video content more accessible.
+> 🌎 From **English, French, German and Spanish** to **Persian, Arabic, Chinese, Japanese, Turkish** and many other languages, Dubly AI makes multilingual video and live content more accessible.
+
+---
+
+## 🎬 Supported Content
+
+Dubly AI is not limited to YouTube.
+
+It is designed for online content such as:
+
+| Content                   | Support |
+| ------------------------- | :-----: |
+| ▶️ YouTube Videos         |    ✅    |
+| 🔴 YouTube Live Streams   |    ✅    |
+| 📺 Online Videos          |    ✅    |
+| 🔴 Live Streams           |    ✅    |
+| 📡 Live Broadcasts        |    ✅    |
+| 🎮 Gameplay               |    ✅    |
+| 🕹️ Gaming Streams        |    ✅    |
+| 🎥 Streaming Content      |    ✅    |
+| 🌐 Online Video Platforms |    ✅    |
+
+> **Note:** Actual compatibility may depend on how the website or video player delivers audio and how the browser exposes the media stream.
 
 ---
 
@@ -124,49 +151,69 @@ For continuous and frequent use, a **paid Gemini API key** is recommended becaus
 ## 🎧 How It Works
 
 ```text
-YouTube Video / Live Stream
-            │
-            ▼
-      Original Speech
-            │
-            ▼
-      Google Gemini AI
-            │
-      ┌─────┴─────┐
-      ▼           ▼
- Translation    AI Voice
-      │           │
-      └─────┬─────┘
-            ▼
-       Dubbed Audio
-            │
-            ▼
-     Translated Video
+        Online Video / Live Stream / Game
+                       │
+                       ▼
+                 Original Speech
+                       │
+                       ▼
+                Google Gemini AI
+                       │
+              ┌────────┴────────┐
+              ▼                 ▼
+         Translation          AI Voice
+              │                 │
+              └────────┬────────┘
+                       ▼
+                  Dubbed Audio
+                       │
+                       ▼
+              Translated Content
 ```
 
-Dubly AI processes speech from the video, translates it using Google Gemini, generates the translated voice, and plays the dubbed audio while displaying translated subtitles.
+Dubly AI captures spoken content from supported online media, processes the speech through Google Gemini, translates it into the selected language, generates AI voice output, and plays the dubbed audio while providing translated subtitles when available.
 
 ---
 
-## 📝 Live Subtitles
+## 📝 Live Translation & Subtitles
 
-Dubly AI can display translated subtitles:
+Dubly AI can provide translated subtitles:
 
-* Directly on the YouTube video
+* Directly over supported video content
 * Inside the extension popup
-* In real time while the video or live stream is playing
+* During videos
+* During live streams
+* While watching gaming and streaming content
+
+This allows you to follow conversations and spoken content without needing to understand the original language.
 
 ---
 
-## 🎙️ AI Dubbing
+## 🎙️ AI Voice Dubbing
 
-The extension provides live AI voice dubbing so you can listen to video content in your preferred language instead of relying only on subtitles.
+Dubly AI provides AI-generated voice dubbing so you can listen to translated content instead of relying only on subtitles.
 
-You can also adjust:
+You can adjust:
 
 * 🔊 Original audio volume
 * 🎙️ Dubbed audio volume
 * 🗣️ Voice selection
+
+---
+
+## 🎮 Gaming & Gameplay
+
+Dubly AI can also be used with **gaming content and gameplay streams**.
+
+For example, you can use it while watching:
+
+* 🎮 Gaming streams
+* 🕹️ Live gameplay
+* 🎥 Gaming videos
+* 🔴 Live gaming broadcasts
+* 🎙️ Game-related streams and commentary
+
+This makes foreign-language gaming content easier to understand in real time.
 
 ---
 
@@ -187,7 +234,7 @@ If continuous live translation is unavailable or encounters limitations, Dubly A
 Dubly AI is designed to keep your API key locally stored in Chrome.
 
 * 🔐 API key is stored locally
-* 🚫 No need to send your API key to a separate server
+* 🚫 No separate Dubly server is required for API-key processing
 * 🔗 Gemini requests are sent directly to Google
 * 🌐 Translation and AI processing are powered by Google Gemini
 
@@ -198,6 +245,7 @@ Dubly AI is designed to keep your API key locally stored in Chrome.
 * An active Gemini API key is required.
 * Free Gemini API usage may be subject to rate limits.
 * A paid Gemini API key is recommended for continuous live dubbing.
+* Compatibility with websites, players, live streams, and games may vary depending on how their audio is delivered.
 * For the latest version, always use the ZIP file available in **GitHub Releases**.
 
 ---
@@ -221,6 +269,16 @@ If you find **Dubly AI** useful:
 
 # Dubly AI
 
-**Real-time AI dubbing. Live translation. 23 languages. Powered by Google Gemini.**
+### 🎙️ Real-Time AI Dubbing
 
-🌍 **Break language barriers and enjoy videos in your language.**
+### 🌍 Live Translation
+
+### 🎮 Gaming & Gameplay
+
+### 🔴 Live Streams
+
+### 🌐 23 Languages
+
+### 🤖 Powered by Google Gemini
+
+**Break language barriers and enjoy online videos, live streams, gaming content and more in your preferred language.**
