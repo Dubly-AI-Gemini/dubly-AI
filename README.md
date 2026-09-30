@@ -1,3 +1,3 @@
-# Dubly AI 6.3.2
+# Dubly AI 1.0.0
 - Translation card: continuous smooth typewriter (no jumps or restarts between fragments).
 - Interface language menu order: English, Français, Deutsch, Español, فارسی, العربية, Türkçe, 中文, 日本語.
