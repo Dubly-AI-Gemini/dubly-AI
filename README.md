@@ -14,7 +14,7 @@ Experience videos in your preferred language with live speech translation, AI-ge
 
 Download the latest version of **Dubly AI** from the GitHub Releases page:
 
-👉 **[⬇️ Download Latest Release](https://github.com/Dubly-AI-Gemini/dubly-AITopics/releases)**
+👉 **[⬇️ Download Latest Release](https://github.com/Dubly-AI-Gemini/dubly-AI/releases)**
 
 > Always download the latest `.ZIP` file from the **Releases** section.
 
@@ -75,7 +75,7 @@ Dubly AI supports **23 major world languages** for AI dubbing and translation.
 
 ### 1. Download Dubly AI
 
-Go to the **[Releases](https://github.com/Dubly-AI-Gemini/dubly-AITopics/releases)** page and download the latest `.ZIP` file.
+Go to the **[Releases](https://github.com/Dubly-AI-Gemini/dubly-AI/releases)** page and download the latest `.ZIP` file.
 
 ### 2. Extract the ZIP
 
@@ -204,7 +204,7 @@ Dubly AI is designed to keep your API key locally stored in Chrome.
 
 ## 🆕 Updates
 
-New versions and downloadable ZIP files are published through the **[GitHub Releases](https://github.com/Dubly-AI-Gemini/dubly-AITopics/releases)** section.
+New versions and downloadable ZIP files are published through the **[GitHub Releases](https://github.com/Dubly-AI-Gemini/dubly-AI/releases)** section.
 
 ---
 
