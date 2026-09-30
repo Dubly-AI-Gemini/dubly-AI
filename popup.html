@@ -1,0 +1,215 @@
+
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dubly AI</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand">
+      <img src="icons/icon48.png" class="brandIcon" alt="">
+      <div>
+        <div class="brandTitle">Dubly AI</div>
+        <div class="tagline" data-i18n="tagline">Live video dubbing with Gemini</div>
+      </div>
+    </div>
+    <span id="liveDot" class="dot"></span>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab active" data-tab="dub" data-i18n="tabDub">Dub</button>
+    <button class="tab" data-tab="settings" data-i18n="tabSettings">Settings</button>
+    <button class="tab" data-tab="support" data-i18n="tabSupport">Support</button>
+  </nav>
+
+  <section id="dub" class="panel active">
+    <div class="card">
+      <label data-i18n="apiKey">Gemini API Key</label>
+      <div class="keyRow">
+        <input id="apiKey" type="password" autocomplete="off" spellcheck="false" placeholder="Enter your Gemini API key">
+        <button id="showKey" class="mini" data-i18n="show">Show</button>
+        <button id="saveKey" class="mini" data-i18n="save">Save</button>
+      </div>
+      <a href="https://aistudio.google.com/apikey" target="_blank" rel="noreferrer" class="aiLink" data-i18n="aiStudio">Get your API key from Google AI Studio ↗</a>
+      <div class="inlineTools">
+        <button id="testApi" class="ghost" data-i18n="testApi">Test API</button>
+        <span id="apiState" class="apiState"></span>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <label data-i18n="target">Dub language</label>
+        <select id="targetLang"></select>
+      </div>
+      <div class="card">
+        <label data-i18n="source">Source language</label>
+        <select id="sourceLang"></select>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="switchLine"><span data-i18n="subtitles">Translated subtitles</span><input id="subtitles" type="checkbox"></div>
+      <label data-i18n="originalVolume">Original audio</label>
+      <div class="rangeLine"><input id="originalVolume" type="range" min="0" max="100" value="0"><span id="originalPct">0%</span></div>
+      <label data-i18n="dubVolume">Dubbed voice</label>
+      <div class="rangeLine"><input id="dubVolume" type="range" min="0" max="140" value="100"><span id="dubPct">100%</span></div>
+    </div>
+
+    <div class="actions">
+      <button id="start" class="primary" data-i18n="start">▶ Start dubbing</button>
+      <button id="stop" class="danger" disabled data-i18n="stop">■ Stop</button>
+    </div>
+
+    <div class="card statusCard">
+      <div class="small" data-i18n="status">Status</div>
+      <div id="statusText" class="statusText">Ready.</div>
+    </div>
+
+    <div class="subtitleCard">
+      <div class="subtitleHeader">
+        <div class="subtitleTitle"><span data-i18n="translationTextLabel">Translation text</span><span class="subtitleIcon">▤</span></div>
+        <label class="toggle"><input id="subtitlesLive" type="checkbox" checked><span></span></label>
+      </div>
+      <div id="translationText" class="translationLive"><span class="translationBadge" data-i18n="translatedBadge">Translated</span><div id="translationContent">—</div></div>
+      <div class="subtitleProgress"><span id="subtitleProgressBar"></span></div>
+    </div>
+  </section>
+
+  <section id="settings" class="panel">
+    <div class="setting">
+      <div><b data-i18n="interfaceLanguage">Interface language</b><div class="hint" data-i18n="interfaceHint">English / فارسی / العربية / Français / Deutsch / Español / Türkçe / 中文 / 日本語</div></div>
+      <select id="uiLang"></select>
+    </div>
+
+    <div class="setting">
+      <div><b data-i18n="defaultLanguage">Default dubbing language</b></div>
+      <select id="settingsTarget"></select>
+    </div>
+
+    <div class="setting">
+      <div><b data-i18n="engine">Dubbing engine</b><div class="hint" data-i18n="engineHint">Live = continuous, lowest delay. Segmented = fallback.</div></div>
+      <select id="engine">
+        <option value="live" data-i18n="engLive">Live translate (recommended)</option>
+        <option value="classic" data-i18n="engClassic">Segmented (translate + voice)</option>
+      </select>
+    </div>
+
+    <div class="setting">
+      <div><b data-i18n="voice">Gemini voice</b><div class="hint" data-i18n="voiceHint">30 prebuilt voices + Voice Library via API</div></div>
+      <select id="voice"></select>
+    </div>
+
+    <div class="setting">
+      <div><b data-i18n="voiceQuality">Voice quality</b><div class="hint" data-i18n="voiceQualityHint">Fast for lower latency; Quality for richer audio</div></div>
+      <select id="ttsModel">
+        <option value="gemini-3.8-flash-tts" selected>Quality · Flash</option>
+        <option value="gemini-3.8-flash-lite-tts">Fast · Flash-Lite</option>
+      </select>
+    </div>
+
+    <div class="setting buttonRow">
+      <button id="refreshVoices" class="ghost" data-i18n="refreshVoices">Refresh voices</button>
+      <button id="testVoice" class="ghost" data-i18n="testVoice">Test voice</button>
+    </div>
+
+    <div class="setting">
+      <div><b data-i18n="uiFont">Interface font</b></div>
+      <select id="uiFont">
+        <option value="system">System</option>
+        <option value="tahoma">Tahoma</option>
+        <option value="arial">Arial</option>
+        <option value="segoe">Segoe UI</option>
+        <option value="verdana">Verdana</option>
+      </select>
+    </div>
+
+    <div class="setting">
+      <div><b data-i18n="uiFontSize">Interface font size</b></div>
+      <select id="uiFontSize">
+        <option value="small" data-i18n="small">Small</option>
+        <option value="medium" selected data-i18n="medium">Medium</option>
+        <option value="large" data-i18n="large">Large</option>
+      </select>
+    </div>
+
+    <div class="setting">
+      <div><b data-i18n="subtitleSize">Subtitle size</b></div>
+      <select id="subtitleSize">
+        <option value="small" data-i18n="small">Small</option>
+        <option value="medium" selected data-i18n="medium">Medium</option>
+        <option value="large" data-i18n="large">Large</option>
+      </select>
+    </div>
+
+    <div class="setting">
+      <div><b data-i18n="theme">Theme</b></div>
+      <select id="theme">
+        <option value="system">System</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
+
+    <div class="setting">
+      <div><b data-i18n="chunkMode">Fast processing</b><div class="hint" data-i18n="chunkHint">Smaller chunks start translation sooner</div></div>
+      <input id="fastMode" type="checkbox">
+    </div>
+
+    <div class="setting">
+      <div><b data-i18n="chunkLength">Audio chunk length</b></div>
+      <select id="chunkSeconds">
+        <option value="6">6 sec</option>
+        <option value="8" selected>8 sec</option>
+        <option value="10">10 sec</option>
+        <option value="12">12 sec</option>
+      </select>
+    </div>
+
+    <button id="reset" class="ghost wide" data-i18n="reset">Reset settings</button>
+
+    <div class="aboutBox">
+      <b>Dubly AI 6.3.2</b>
+      <div class="hint" data-i18n="about">کلید API فقط به‌صورت محلی در Chrome ذخیره می‌شود و مستقیم به Google Gemini ارسال می‌شود.</div>
+    </div>
+  </section>
+
+  <section id="support" class="panel">
+    <div class="supportHero">
+      <div class="heart">♥</div>
+      <h3 data-i18n="supportTitle">Support the project</h3>
+      <p data-i18n="supportText">This extension is free. You can support development with a crypto donation.</p>
+    </div>
+
+    <div class="networkTabs">
+      <button class="network active" data-network="eth">Ethereum</button>
+      <button class="network" data-network="base">Base</button>
+      <button class="network" data-network="bsc">BNB Smart Chain</button>
+    </div>
+
+    <div class="donationCard">
+      <img id="qr" class="qr" alt="Crypto donation QR">
+      <div id="networkName" class="networkName">Ethereum · Chain ID 1</div>
+      <div class="wallet">0xc13F621C04b65E13D41b0De52ad7b400eFc98Fa2</div>
+      <button id="copyWallet" class="ghost wide" data-i18n="copyWallet">Copy wallet address</button>
+      <div id="copyState" class="copyState"></div>
+      <a id="explorer" class="explorer" target="_blank" rel="noreferrer">Open explorer ↗</a>
+      <div class="warning" data-i18n="networkWarning">Verify the selected network before sending.</div>
+    </div>
+  </section>
+
+  <footer>
+    <a href="privacy-policy.html" target="_blank" data-i18n="privacy">Privacy</a>
+    <span>·</span>
+    <a href="https://ai.google.dev/gemini-api/docs" target="_blank" rel="noreferrer" data-i18n="docs">مستندات Gemini</a>
+    <span>·</span>
+    <a href="https://chromewebstore.google.com/" target="_blank" rel="noreferrer" data-i18n="webStore">Chrome Web Store</a>
+  </footer>
+</div>
+<script src="popup.js"></script>
+</body>
+</html>
