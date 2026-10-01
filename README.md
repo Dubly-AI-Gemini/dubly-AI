@@ -286,3 +286,5 @@ If you find **Dubly AI** useful:
 ### 🤖 Powered by Google Gemini
 
 **Break language barriers and enjoy online videos, live streams, gaming content and more in your preferred language.**
+[![X (Twitter)](https://img.shields.io/badge/X-dublyaigemini-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/dublyaigemini)
+[![Gmail](https://img.shields.io/badge/Gmail-dublyaigemini%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:dublyaigemini@gmail.com)
