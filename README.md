@@ -134,7 +134,15 @@ Open the Dubly AI extension, enter your **Google Gemini API key**, and click:
 
 **Start dubbing**
 
----
+## Install Android 
+"On Android, you can download the Lemur Browser application from Google Play and install extension ZIP files directly onto it without extracting them."
+How to Install a ZIP Extension on Lemur Browser (Android):
+ * Download the app: Install Lemur Browser from Google Play and open it.
+ * Open Extensions: Tap the puzzle piece icon (Extensions) on the bottom toolbar.
+ * Go to Management: Select Extension Management.
+ * Enable Developer Mode: Turn on the Developer Mode toggle in the top-right corner.
+ * Load the ZIP File: Tap +.zip / .crx / .user.js, select your .zip file from your device, and it will install automatically without needing to be extracted.
+
 
 ## 🔑 Gemini API Key
 
